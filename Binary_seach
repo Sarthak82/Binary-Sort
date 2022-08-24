@@ -1,0 +1,22 @@
+#binary search
+pos=0
+def search(list,n):
+    lower=0
+    upper=len(list)-1
+    for i in range(0,len(list)):
+        mid=(upper+lower)//2
+        if list[mid]==n:
+            globals()['pos']=mid
+            return True
+        else:
+            if list[mid]>n:
+                upper=mid
+            else:
+                lower=mid
+
+list=[10,20,30,40,50,60,200,800,77777]
+n=0
+if search(list,n):
+    print('found at pos: ',pos+1)
+else:
+    print('Not found')
